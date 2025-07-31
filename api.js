@@ -75,8 +75,6 @@ app.post('/video', upload.single('video'), async (req, res) => {
         await upscaleDir(framesDirectoryPath, model);
         await reVideo(framesDir);
 
-        // Assuming the output is an .mp4 file
-        // Modify this path if reVideo saves the file differently
         const outputPath = path.join(__dirname, `${videoName}_upscaling_reconstructed.mp4`);
 
         // Check if the output file exists
